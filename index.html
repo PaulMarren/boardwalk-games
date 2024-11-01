@@ -41,7 +41,7 @@
                         <a class="nav-link" href="#services">Services</a>
                     </li>
                     <li class="nav-item"></li>
-                        <a class="nav-link" href="#events">Events</a>
+                    <a class="nav-link" href="#events">Events</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="game-library.html">Games</a>
@@ -201,11 +201,15 @@
                 <div class="col-12 d-xl-flex">
                     <!-- Paragraphs-->
                     <div class="col-xl-6 me-xl-4">
-                        <p class="my-4 mt-0">Whether you're delving into dungeons, reliving classic games, or competing in
-                            high-stakes tournaments, there's something for every gamer. Reservations are recommended to ensure
-                            your spot at the table. Student discounts are available, so bring your student ID and enjoy more
+                        <p class="my-4 mt-0">Whether you're delving into dungeons, reliving classic games, or competing
+                            in
+                            high-stakes tournaments, there's something for every gamer. Reservations are recommended to
+                            ensure
+                            your spot at the table. Student discounts are available, so bring your student ID and enjoy
+                            more
                             gaming for less.</p>
-                        <p class="my-4">Outside scheduled events, our shop remains open for regular play. Join us anytime to
+                        <p class="my-4">Outside scheduled events, our shop remains open for regular play. Join us
+                            anytime to
                             discover new games and meet fellow enthusiasts.</p>
                     </div>
                     <!--Events Table-->
@@ -249,10 +253,10 @@
             <div class="text-center mb-4">
                 <a href="booking.html" class="btn custom-button-outline ms-lg-3">Book now</a>
             </div>
-        
+
         </section>
 
-        
+
     </main>
 
     <!-- Footer/Contact section-->
@@ -333,6 +337,27 @@
     <!--Font Awesome kit-->
     <script src="https://kit.fontawesome.com/d6027df14b.js" crossorigin="anonymous"></script>
 
+    <!-- JavaScript code to ensure the Bootstrap mobile navbar collapses when navigating to in-page links -->
+    <script>
+        document
+            .querySelectorAll(".navbar-collapse .nav-link")
+            .forEach((link) => {
+                link.addEventListener("click", function (e) {
+                    let section = document.querySelector(e.target.getAttribute("href"));
+                    if (section) {
+                        e.preventDefault(); // Prevent default anchor click behavior
+                        let navbarHeight = document.querySelector(".navbar-toggler").offsetHeight;
+                        window.scroll({
+                            top: section.offsetTop - navbarHeight, // Adjust for navbar height
+                            behavior: "smooth",
+                        });
+                        document
+                            .querySelector(".navbar-collapse")
+                            .classList.remove("show"); // Collapse navbar
+                    }
+                });
+            });
+    </script>
 </body>
 
 </html>
